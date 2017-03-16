@@ -11,8 +11,6 @@ from math import pi, cos, sin
 
 season_const = 2 * pi / 365.25
 solar_const = season_const / 10.7
-print(season_const)
-print(solar_const)
 
 tempChange = pulp.LpProblem("Corvallis Temperature Change", pulp.LpMinimize)
 
@@ -45,7 +43,5 @@ tempChange.solve()                          # solve problem
 print(pulp.LpStatus[tempChange.status])     # was optimal found?
 
 # print the found values of x0, x1, ..., x5
-print(len(tempChange.variables()))
-print(tempChange.variables())
 for var in tempChange.variables():
     print("{} = {}".format(var.name, var.varValue))
