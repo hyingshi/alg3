@@ -27,18 +27,17 @@ tempChange += M, 'M'
 
 # Constraints:
 with open('Birmingham_clean.csv', 'r') as csvfile:
-    reader = csv.reader(csvfile, delimiter=';')
+    reader = csv.reader(csvfile, delimiter=',')
     for row in reader:
         if row[0] != 'STATION':             # skip header
-            T = float(row[7])
-            d = int(row[8])
+            T = float(row[3])
+            d = int(row[6])
     
             tempChange += x0 + x1*d + x2*cos(season_const*d) + x3*sin(season_const*d) + x4*cos(solar_const*d) + x5*sin(solar_const*d) - T <= M
             tempChange += x0 + x1*d + x2*cos(season_const*d) + x3*sin(season_const*d) + x4*cos(solar_const*d) + x5*sin(solar_const*d) - T >= -M
 
 csvfile.close()
 
-# print(tempChange)
 tempChange.solve()                          # solve problem
 print(pulp.LpStatus[tempChange.status])     # was optimal found?
 

@@ -38,7 +38,6 @@ with open('Corvallis.csv', 'r') as csvfile:
 
 csvfile.close()
 
-# print(tempChange)
 tempChange.solve()                          # solve problem
 print(pulp.LpStatus[tempChange.status])     # was optimal found?
 
