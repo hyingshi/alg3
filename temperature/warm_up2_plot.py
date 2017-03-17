@@ -21,7 +21,6 @@ with open('Corvallis.csv', 'r') as csvfile:
    
 csvfile.close()
 
-
 plt.figure(num=1, figsize=(20,10))
 plt.title('Daily Average Temperature Change in Corvallis Since 1952')
 plt.ylabel('Average temperature for given day (Celsius)')
@@ -38,6 +37,3 @@ plt.plot(x, y,linewidth = 3.3,color = 'g' )
 plt.plot(day,temperature , 'ro',markersize = 2)
 plt.axis([0, 22500, -15, 35])
 plt.savefig("warmUp2.png")
-
-
-

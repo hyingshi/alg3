@@ -1,7 +1,7 @@
 import csv
 from datetime import date
 
-input_file = open('Birmingham_unclean.csv', 'r')
+input_file = open('orig_download.csv', 'r')
 output_file = open('Birmingham_clean.csv', 'w')
 
 reader = csv.reader(input_file)
